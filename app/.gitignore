@@ -6,3 +6,4 @@
 .sonar
 
 /release.properties
+/.externalNativeBuild/

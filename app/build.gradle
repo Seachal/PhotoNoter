@@ -66,30 +66,30 @@ android {
         abortOnError false
     }
 
-    signingConfigs {
-        release {
-            Properties p = new Properties()
-            p.load(new FileInputStream(project.file('release.properties')))
-            storeFile file(p.storeFile)
-            storePassword p.storePassword
-            keyAlias p.keyAlias
-            keyPassword p.keyPassword
-        }
-        debug {
-            storeFile file("debug.keystore")
-        }
-    }
+//    signingConfigs {
+//        release {
+//            Properties p = new Properties()
+//            p.load(new FileInputStream(project.file('release.properties')))
+//            storeFile file(p.storeFile)
+//            storePassword p.storePassword
+//            keyAlias p.keyAlias
+//            keyPassword p.keyPassword
+//        }
+//        debug {
+//            storeFile file("debug.keystore")
+//        }
+//    }
 
     buildTypes {
         release {
 //            shrinkResources true
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             buildConfigField "boolean", "LOG_DEBUG", "false"
         }
         debug {
-            signingConfig signingConfigs.debug
+//            signingConfig signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             buildConfigField "boolean", "LOG_DEBUG", "true"
